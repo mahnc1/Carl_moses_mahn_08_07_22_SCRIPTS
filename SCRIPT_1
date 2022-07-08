@@ -1,0 +1,49 @@
+//defining used variables
+//importing pdf library
+import processing.pdf.*;
+
+PImage bg;
+int y;
+
+void setup() {
+
+//defining size through scale values
+size (828, 1169);
+scale(1000/400.);
+
+//defining the background image 
+bg = loadImage("Background.jpg");
+
+}
+
+void draw() {
+background(bg);
+
+//alligning the text
+textAlign(LEFT);
+drawType(-10);
+
+//defining font
+saveFrame("Poster.png");
+
+}
+
+void drawType(float x) {
+
+//defining font
+PFont HELVETICA;
+HELVETICA = createFont("Helvetica-Bold.ttf", 320);
+textFont(HELVETICA);
+
+//adding text colour (R, G, B, Opacity);
+fill(0, 125, 255, 250);
+//adding text ("TEXT", x, y);
+text("CODE", x, 230);
+fill(0, 125, 255, 250);
+text("FOR", x, 530);
+fill(0, 125, 255, 250);
+text("DESIGN", x, 830);
+fill(0, 125, 255, 250);
+//adding text colour (R, G, B, Opacity);
+text("N", x, 1130);
+}
