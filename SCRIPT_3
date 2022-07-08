@@ -1,0 +1,36 @@
+PShape RADIANT;
+
+void setup() {
+  //defining page size and P3D environment
+  size(900, 550, P3D);
+  
+  //defining .obj file (3D FILE)
+  RADIANT = loadShape("RADIANT FONT.obj");
+  
+  //defining colour values
+  RADIANT.setFill(0xffff007f);
+  RADIANT.setAmbient(0xff7f7f00);
+  RADIANT.setSpecular(0xff0000ff);
+  
+}
+
+void draw() {
+  //background colour
+  background(200, 200, 200);
+
+  lightFalloff(1, 0, 0);
+  lightSpecular(128, 128, 128);
+
+  //ambientLight(128, 128, 128);
+
+  directionalLight(128, 128, 128, 0, 1, 0);
+  //placing camera accordingly
+  camera(0, 0, height * .86602,
+    0, 0, 0,
+    0, 2, 0);
+ 
+  //rotate 3D File
+  shape(RADIANT);
+  RADIANT.rotateY(.01);
+  
+}
